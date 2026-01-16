@@ -2,6 +2,7 @@
 Project Overview
 
 This project, developed as part of Reto 4 at UVEG, explores the implementation of the Exponential Smoothing algorithm for time-series forecasting. The goal is to predict values for the year 2020 based on historical data from 2015-2019 across various indicators.
+The real challenge of this exercise was to iterate over all the values in the same column to have a real and truly value of accumulated forecast, getting it by applying the formula recursively over all the values. I could just simply consider the last value like my pivot, but no. We go to the moon not because it's easy, but because it is hard.
 
 Original data
 | | HC | HI | HT | HTP | U6E | UI6E | UCHE | UITI | UIFH | UTC6E |
@@ -25,7 +26,8 @@ Final table, with predicted values in 6th row
 The Algorithm
 
 Exponential smoothing is a technique for smoothing time series data using the exponential window function. The implementation follows the formula:
-St​=α⋅Xt−1​+(1−α)⋅St−1​
+
+> St​=α⋅Xt−1​+(1−α)⋅St−1​
 
 Where:
 
